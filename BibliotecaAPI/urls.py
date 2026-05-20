@@ -19,5 +19,6 @@ from django.urls import path
 from django.http import HttpResponse
 from appBiblioteca import views
 urlpatterns = [
-    path('cadastro/', views.cadastro, ),
+    path('cadastro/', views.cadastro, name="cadastro"),
+
 ]
