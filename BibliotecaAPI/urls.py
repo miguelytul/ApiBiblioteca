@@ -14,11 +14,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+
+
+
+
+# Importa o painel administrativo do Django
 from django.contrib import admin
+# Importa path para criar rotas
 from django.urls import path
+# Importa HttpResponse
 from django.http import HttpResponse
+# Importa as views do app
 from appBiblioteca import views
+
+
+# Lista de URLs do projeto
 urlpatterns = [
     path('cadastro/', views.cadastro, name="cadastro"),
-
 ]

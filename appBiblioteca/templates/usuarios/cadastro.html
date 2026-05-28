@@ -1,44 +1,101 @@
 {% load static %}
+<!-- Carrega os arquivos estáticos do Django (CSS, imagens, JS) -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
+    <!-- Define codificação UTF-8 -->
     <meta charset="UTF-8">
+
+    <!-- Faz o site funcionar corretamente em celulares -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
     <title>Cadastro - Biblioteca</title>
+
+    <!-- Importa o arquivo CSS -->
     <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
 
 </head>
+
 <body>
 
+    <!-- Container principal -->
     <div class="container">
+
+        <!-- Card do formulário -->
         <div class="card">
+
+            <!-- Título -->
             <h1>Cadastro</h1>
+
+            <!-- Texto abaixo do título -->
             <p>Crie sua conta na biblioteca</p>
 
+            <!-- Formulário -->
             <form method="POST">
+
+                <!-- Proteção de segurança do Django contra CSRF -->
                 {% csrf_token %}
 
+                <!-- Campo nome -->
                 <div class="input-group">
+
                     <label>Nome Completo</label>
-                    <input type="text" name="nome" placeholder="Digite seu nome">
+
+                    <input
+                        type="text"
+                        name="nome"
+                        placeholder="Digite seu nome"
+                    >
+
                 </div>
 
+                <!-- Campo email -->
                 <div class="input-group">
+
                     <label>Email</label>
-                    <input type="email" name="email"placeholder="Digite seu email">
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Digite seu email"
+                    >
+
                 </div>
 
+                <!-- Campo senha -->
                 <div class="input-group">
+
                     <label>Senha</label>
-                    <input type="password" name="senha"placeholder="Digite sua senha">
+
+                    <input
+                        type="password"
+                        name="senha"
+                        placeholder="Digite sua senha"
+                    >
+
                 </div>
 
+                <!-- Campo confirmar senha -->
                 <div class="input-group">
+
                     <label>Confirmar Senha</label>
-                    <input type="password" placeholder="Confirme sua senha">
+
+                    <input
+                        type="password"
+                        placeholder="Confirme sua senha"
+                    >
+
                 </div>
 
-                <button type="submit">Cadastrar</button>
+                <!-- Botão de cadastro -->
+                <button type="submit">
+                    Cadastrar
+                </button>
+
             </form>
         </div>
     </div>
